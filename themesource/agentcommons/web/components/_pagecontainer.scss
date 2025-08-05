@@ -1,0 +1,278 @@
+@import "../../../atlas_core/web/_variables.scss";
+@import "../../../../theme/web/custom-variables.scss";
+
+//Agents Overview
+
+.agents-page-content-container {
+    min-height: -webkit-fill-available;
+    min-height: -moz-available;
+    display: flex;
+    justify-content: center;
+
+    .agents-container--overview {
+        width: 90%;
+        max-width: 1200px;
+        margin: $spacing-large;
+        flex-direction: column;
+
+        .td {
+            border-bottom: none;
+        }
+
+        &.card {
+            overflow: unset;
+            border-radius: $spacing-medium;
+            border: 1px solid $gray-primary;
+            padding-top: $spacing-medium;
+        }
+
+    }
+
+    .pageheader-with-buttons {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}
+
+//Version_Details
+
+.agent-page-container {
+    max-width: 1800px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    gap: $spacing-large;
+    padding: $spacing-medium $spacing-larger $spacing-medium $spacing-larger;
+    overflow: auto;
+    box-sizing: border-box;
+
+    .agent-page-container::after {
+        content: '';
+        display: block;
+        height: $spacing-larger;
+        flex-shrink: 0;
+        }
+
+    .card {
+        width: 100%;
+        border-radius: $spacing-medium;
+        border: 1px solid $gray-primary;
+        overflow: hidden;            
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;             
+        box-sizing: border-box;  
+
+        * {
+            word-break: break-word;
+            overflow-wrap: break-word;
+            white-space: normal; 
+        }
+    }
+
+    .divider {
+        display: flex;
+        align-items: flex-start;
+        align-self: stretch;
+        border-bottom: 1px solid #E7E7E9;
+        margin-top: $spacing-medium;
+        margin-bottom: $spacing-medium;
+    }
+
+    .title-alignment {
+        display: flex;
+        justify-content: flex-start; 
+        align-items: center; 
+    }
+
+    .title-alignment-top {
+        display: flex;
+        justify-content: flex-start; 
+        align-items: top;
+    }
+
+    .page-container-main {
+        flex: 1 1 0;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        overflow: visible;
+        height: 100%;
+        overflow-y: auto;
+        .card {
+            overflow: unset;
+        }
+    }
+
+    .page-container-grid {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-large;
+        padding-top: 28px;
+
+        .card {
+            margin-bottom: 0;
+        }
+    }
+
+    .page-container-side {
+        z-index: 100;
+        width: 100%;
+        max-width: 25vw;
+        display: flex;
+        flex-direction: column;
+        padding-top: 28px;
+        height:100%;
+    }
+    
+    .page-header-content {
+        display: flex;
+        flex-direction: column; 
+        gap: $spacing-small;
+        align-self: stretch;
+
+        .pageheader-with-buttons {
+            display: flex !important;
+            margin-bottom: 0;
+            align-items: center !important;
+            justify-items: center;
+            justify-content: space-between;
+        }
+
+        .page-header-menu {
+            display: flex !important;
+            align-items: end !important;
+        }
+    }
+
+    .pageheader-navigation {
+        display: flex !important;
+        align-items: center !important;
+        flex-flow: row !important;
+        justify-content: flex-start !important;
+    }
+
+    .page-content {
+        width: 100%;
+        max-width: 1800px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: fit-content;
+    }
+
+
+    //If a chat was opened, the containers grow to max width
+    .content-chat {
+        display: block;
+
+        .content-main {
+            width: 100%;
+            padding-right: unset;
+        }
+
+        .content-column {
+            width: 100%;
+        }
+    }
+
+    .panel-header {
+        &::after {
+            content: "";
+        }
+
+        display: flex;
+        flex-direction: row;
+        border-bottom: 1px solid $table-border-separator-color;
+        padding-right: $spacing-small;
+        height: fit-content;
+
+        .header-text {
+            flex-direction: column;
+            margin-left: $spacing-medium;
+            padding-right: $spacing-small;
+            padding-bottom: $spacing-small;
+        }
+
+        .icon-area {
+            margin-top: $spacing-small;
+            margin-left: auto;
+            max-width: 75px;
+
+            .new-chat-icon {
+                img {
+                    height: 24px;
+                    width: 24px;
+                    margin-right: 0;
+                }
+            }
+
+            .close-icon {
+                border-left: 2px solid $gray-primary;
+                padding-left: $spacing-small;
+                margin-right: $spacing-small;
+                margin-left: $spacing-small;
+                height: fit-content;
+
+                img {
+                    height: 24px;
+                    width: 24px;
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    .panel-content {
+        flex: 1 1 0;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-content {
+        //overflow-y: auto;
+        overflow-x: hidden;
+        margin-bottom: 0;
+    }
+
+    .card-header {
+        display: flex;
+        flex-direction: row;
+
+        &--version {
+            z-index: 1;
+        }
+        .mx-text {
+            align-self: center;
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+.margin-right-45{
+    margin-right: 45px;
+}
+
+.combobox-model-selection {
+    display: flex;
+    flex-grow: 1;
+    min-width: 360px;
+
+    .model-selection{
+        display: flex;
+        align-items: center;
+        height: max-content;
+    
+        .mx-image-viewer {
+            height: auto;
+            width: auto;
+            margin-right: $spacing-small;
+        }
+    }
+}
